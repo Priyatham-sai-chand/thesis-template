@@ -1,0 +1,59 @@
+%\newgeometry{a4paper,outer=0in,inner=2in,top=1in,footskip=2in}
+%\titleformat{\chapter}
+%{\centering\normalfont\huge\bfseries}{\thechapter.}{15pt}{\huge}
+%\titlespacing*{name=\chapter}{0pt}{-40pt}{10pt}
+\chapter{LITERATURE SURVEY}
+%\titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\thechapter.\chaptername}{20pt}{\Huge}
+%\titlespacing*{name=\chapter}{0pt}{-50pt}{10pt}
+\label{ch:literature_survey}
+
+In literature survey I have investigated various researches on this particular domain and some of them are as follows :-
+
+\begin{enumerate}[wide, labelwidth=!, labelindent=0pt]
+    \item \textbf{Serverless Applications: Why, When, and How?} \cite{eismann2020serverless}
+
+  Serverless computing shows good promise for efficiency and ease-of-use. Yet, there are only a few, scattered and sometimes conflicting reports on questions such as Why do so many companies adopt serverless?, When are serverless applications well suited?, and How are serverless applications currently implemented? To address these questions, we analyze 89 serverless applications from open-source projects, industrial sources, academic literature, and scientific computing—the most extensive study to date.     
+    \item \textbf{Serverless Electronic Mail } \cite{goodell2020serverless}
+
+
+  We describe a simple approach to peer-to-peer electronic mail that would allow users of ordinary workstations and mobile devices to exchange messages without relying upon third-party mail server operators. Crucially, the system allows participants to establish and use multiple unlinked identities for communication with each other. The architecture leverages ordinary SMTP \cite{rfc5322} for message delivery and Tor \cite{dingledine2004tor} for peer-to-peer communication. The design offers a robust, unintrusive method to use self-certifying Tor onion service names to bootstrap a web of trust based on public keys for end-to-end authentication and encryption, which in turn can be used to facilitate message delivery when the sender and recipient are not online simultaneously. We show how the system can interoperate with existing email systems and paradigms, allowing users to hold messages that others can retrieve via IMAP \cite{rfc3501}  or to operate as a relay between system participants and external email users. Finally, we show how it is possible to use a gossip protocol to implement mailing lists and how distributed ledger technology might be used to bootstrap consensus about shared knowledge among list members.
+    \item \textbf{Tracking Causal Order in AWS Lambda Applications} \cite{lin2018tracking}
+    
+   Serverless computing is a new cloud programming and deployment paradigm that is receiving wide-spread uptake. Serverless offerings such as Amazon Web Services (AWS) Lambda, Google Functions, and Azure Functions automatically execute simple functions uploaded by developers, in response to cloud-based event triggers. The serverless abstraction greatly simplifies integration of concurrency and parallelism into cloud applications, and enables deployment of scalable distributed systems and services at very low cost. Although a significant first step, the serverless abstraction requires tools that software engineers can use to reason about, debug, and optimize their increasingly complex, asynchronous applications. Toward this end, we investigate the design and implementation of GammaRay, a cloud service that extracts causal dependencies across functions and through cloud services, without programmer intervention. We implement GammaRay for AWS Lambda and evaluate the overheads that it introduces for serverless micro-benchmarks and applications written in Python.     
+    \item \textbf{Serverless Computing: Design, Implementation, and Performance} \cite{mcgrath2017serverless}
+    
+  We present the design of a novel performance- oriented serverless computing platform implemented in .NET, deployed in Microsoft Azure, and utilizing Windows containers as function execution environments. Implementation challenges such as function scaling and container discovery, lifecycle, and reuse are discussed in detail. We propose metrics to evaluate the execution performance of serverless platforms and conduct tests on our prototype as well as AWS Lambda, Azure Functions, Google Cloud Functions, and IBM’s deployment of Apache OpenWhisk. Our measurements show the prototype achieving greater throughput than other platforms at most concurrency levels, and we examine the scaling and instance expiration trends in the implementations. Additionally, we discuss the gaps and limitations in our current design, propose possible solutions, and highlight future research.     
+    \item \textbf{Be wary of the economics of "Serverless" Cloud Computing} \cite{eivy2017wary}
+    
+   In standard cloud computing, dedicated hard- ware is replaced by dynamically allocated, pay-per- use resources, such as virtual servers. Although called “pay-per-use,” these resources are typically billed based on allocation, not on actual use, potentially leading to a customer paying more than necessary. In “serverless,” no resources are typically allocated or chargeable until a function is called. It’s like the difference between a rental car and a taxi: you will be charged for the rental car even if you park it for a week, unlike a taxi. Moreover, some cloud providers are offering seemingly massive amounts of serverless computing at no charge. This holds the promise of the most efficient processing possible—for free or at least what seem to be attractive prices. Moreover, serverless fits with the modern approach to application construction—composing microservices rather than building hard-to-manage and scale monolithic applications. However, as with many things, the devil is in the details and the economic benefits of serverless computing heavily depend on the execution behavior and volumes of the application workloads. In the same way that pennies per day can add up to thousands of dollars eventually, low “per hit” prices can not only add up as transaction volumes increase, but can make serverless economics unattractive relative to what have now become more traditional approaches,such as virtual machines or even dedicated hardware. 
+
+
+\item \textbf{Honorable Mention: Serverless architecture-a revolution in cloud computing} \cite{rajan2018serverless}
+
+\noindent
+Emergence of cloud computing as the inevitable IT computing paradigm, the perception of the compute reference model and building of services has evolved into new dimensions. Serverless computing is an execution model in which the cloud service provider dynamically manages the allocation of compute resources of the server. The consumer is billed for the actual volume of resources consumed by them, instead paying for the pre-purchased units of compute capacity. This model evolved as a way to achieve optimum cost, minimum configuration overheads, and increases the application's ability to scale in the cloud. The prospective of te serverless compute model is well conceived by the major cloud service providers and reflected in the adoption of serverless computing paradigm. This review paper presents a comprehensive study on serverless computing architecture and also extends an experimentation of the working principle of serverless computing reference model adapted by AWS Lambda. The various research avenues in serverless computing are identified and presented.
+\end{enumerate}
+
+\begin{table}[H]
+	%\rowcolors{1,3,6}{mygreen!20}{white}
+
+\begin{tabular}{|p{1.2em}|p{2.6em}|p{3.0em}|p{7.5em}|p{6em}|p{4.5em}|p{5.5em}|} 
+\hline
+S.no & Publish Year & Author & Title & Application & Advantage & Disadvantages \\
+\hline
+1. & 2020 &Simon Eismann et al.&\textbf{Serverless Applications:
+Why, When, and How? } & computing is isolated till it's completion &Describes case study for serverless backend& Only covers studies on adaption rather than success rate\\ 
+\hline
+2. & 2020 &Geoffrey Goodell&\textbf{Serverless Electronic Mail } & P2P network for email management & Gives better idea of SMTP in serverless networks &Considers a decentralized network based on Tor.\\ 
+\hline
+3. & 2018& Wei-Tsung Lin et al.&\textbf{Tracking Causal Order in AWS Lambda Applications}&  performance benchmarks for using lambda with various other services.& Detailed analysis on compatibility and what to expect upon combining.& Uses a niche tool called Gammaray which is superseded by X-ray traces.\\ 
+\hline
+
+4. & 2017& McGrath et al.  & \textbf{Serverless Computing: Design, Implementation, and Performance} &  Compare and contrast various providers and approach needed & gives model architectures and design stragies  & Provides solutions based on containers.\\ 
+\hline
+5. & 2017 & Adam Eivy & \textbf{Be wary of the economics of "Serverless" Cloud Computing} & Explains the cost attributed with this technology & In detail about Scalability vs Economics & Doesn't cover larger payload scenarios\\ 
+\hline
+\end{tabular}
+\caption{Summary of literature survey}
+\end{table}
+

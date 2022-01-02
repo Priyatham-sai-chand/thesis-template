@@ -1,0 +1,38 @@
+%\titleformat{\chapter}[display]
+%{\centering\normalfont\huge\bfseries}{\chaptertitlename~\thechapter}{15pt}{\huge}
+%\titlespacing*{\chapter}{0pt}{0pt}{10pt}
+%\titlespacing*{name=\chapter,numberless}{0pt}{-40pt}{10pt}
+%\renewcommand{\@makeschapterhead}[1]{%
+%%  \vspace*{50\p@}%
+%  \vspace*{20\p@}%
+%  {\parindent \z@ \raggedright
+%    \normalfont
+%    \interlinepenalty\@M
+%    \Huge \bfseries  #1\par\nobreak
+%%    \vskip 40\p@
+%    \vskip 20\p@
+%  }}
+\chapter*{ABSTRACT}
+\addcontentsline{toc}{chapter}{ABSTRACT}
+\thispagestyle{empty}
+\justifying
+
+Email has become one of the most important means of communications.Sending emails through conventional software like Gmail is limited to a mere thousands which is not sufficient to fit into the business needs and managing the insights of sent emails is crucial to companies to further enhance their approach. Serverless computing is any computing platform that hides server usage from developers and runs code on-demand automatically scaled and billed only for the time the code is running \cite{castro2019rise}.This reduces the time and knowledge required to deploy pieces of software while offering significant reduction in pricing compared to hosting the software on dedicated hardware.\par
+
+\vspace{0.2cm}
+\noindent
+Various cloud platforms such as Amazon Web Services (AWS), Microsoft Azure and Google Cloud Platform have adapted to this way of thinking making it easily accessible.A robust serverless architecture for sending bulk emails of the magnitude of thousands to millions using scalable model which is implemented using AWS lambda\cite{awslambda} and Simple Email Service(SES) for the SMTP protocol.\par 
+
+\vspace{0.2cm}
+\noindent
+Challenges such as able to trace the bounce emails as well as the statistics for the emails sent. The prototype is built using the ReactJS framework along with underlying services from AWS. These tightly integrated services offer the best way to simulate the architecture and help in sending customized for every recipient based on email templates along with storing bounce emails. The effectiveness of the scalability offered by the architecture is analyzed using X-ray traces to simulate and test the bottlenecks and how to overcome them is discussed. With serverless technology, the cloud provider abstracts away the server management, provisioning servers with fine granularity, on demand, and with a pay-per-use model\cite{eismann2020serverless}. \par
+
+
+\vspace{0.2cm}
+\noindent
+This project proposes an architecture for sending and management of the emails through serverless application using the AWS services and its implementation using a javascript based frontend application.
+
+\par
+\vspace{0.1cm}
+\noindent
+\textbf{Keywords :} Serverless,bounce emails,scalability.

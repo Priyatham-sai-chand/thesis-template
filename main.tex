@@ -1,0 +1,190 @@
+\documentclass[hidelinks]{thesis}
+
+%-----------------------------------------
+% Packages
+%-----------------------------------------
+\usepackage[a4paper,outer=0in,inner=2in,top=2in,footskip=1.2cm,textheight=25cm]{geometry}
+\usepackage{graphics} % for pdf, bitmapped graphics files
+\usepackage{epsfig} % for postscript graphics files
+\usepackage{amsmath} % assumes amsmath package installed
+\usepackage{titlesec}
+\usepackage{cite}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{tcolorbox}
+\usepackage{adjustbox}
+\usepackage{multirow}
+\usepackage{pgfplots}
+\usepackage{csquotes}
+\usepackage[linesnumbered,algoruled,boxed,lined]{algorithm2e}
+\usepackage{textcomp}
+\usepackage[T1]{fontenc}
+\usepackage{varioref}
+\usepackage{float}
+\usepackage{times}
+\usepackage{amssymb}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{sidecap}
+\usepackage{verbatim} %%% for clock comments 
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\usepackage{caption}
+\usepackage{hyperref}
+\usepackage[document]{ragged2e}
+\usepackage{tabularx}
+\usepackage[toc,page]{appendix}
+\usepackage[titles]{tocloft}
+\usepackage{enumitem}
+%\usepackage{showframe} %show borders for debugging
+
+\renewcommand{\cftdot}{}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+     tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+
+
+%-----------------------------------------
+% From  https://tex.stackexchange.com/a/310214
+%-----------------------------------------
+
+
+%eformat{\chapter}[display]{\bfseries\centering}{\huge \thechapter}{1em}{\Huge #1}
+%-----------------------------------------
+% Start of the document
+%-----------------------------------------
+
+\titleformat{\chapter}{\centering\normalfont\huge\bfseries}{\thechapter.}{5pt}{\huge}
+\titlespacing*{name=\chapter}{0pt}{-40pt}{5pt}
+
+\begin{document}
+%-----------------------------------------
+% Title page
+%-----------------------------------------
+
+\begin{titlepage}
+    \begin{center}
+	    An Industrial Oriented Mini Project (CS70PC) Report\\
+	    on\\
+        {\Large  \bfseries BULK EMAIL MANAGEMENT USING SERVERLESS ARCHITECTURE}\\
+
+	\vspace{0.2cm}
+	\emph{ submitted }\\
+        \emph{ in partial fulfillment of the requirements for the award of the degree of }\\
+        
+        \textbf{Bachelor of Technology}\\
+        in\\
+        \textbf{Computer Science and Engineering}\\
+        by\\
+        \textbf{Mr. BAZARU PRIYATHAM SAI CHAND }\\
+        \textbf{(18261A0508)}\\
+       \vfill 
+	Under the Guidance of\\
+        \textbf{Dr. A. Nagesh}\\
+        \textbf{(Professor)}\\
+
+        \vfill
+	\vspace{0.4cm}
+        \begin{figure}[h]
+            \centering
+            \includegraphics[width=39mm]{figures/mgit_logo_1.png}
+        \end{figure}
+
+        \vfill
+        Department of Computer Science and Engineering\\
+        \textbf{MAHATMA GANDHI INSTITUTE OF TECHNOLOGY}\\
+    \small \text{(Affiliated to Jawaharlal Nehru Technological University, Hyderabad)}\\
+        Hyderabad 500075, Telangana (India).\\
+        \small \text{2021-2022}\\
+    \end{center}
+\end{titlepage}
+
+
+
+%-----------------------------------------
+% Declaration, Acknowledgement
+%-----------------------------------------
+\pagenumbering{roman}
+\include{certificate} 
+\include{declaration}
+\include{acknowledgement}
+%----------------------------------------------
+% Table of contents, list of figures and tables
+%----------------------------------------------
+
+%- capitalizing contents 
+\let\mtcontentsname\contentsname
+\renewcommand\contentsname{TABLE OF CONTENTS}
+\renewcommand*\listfigurename{LIST OF FIGURES}  %- capitalize list of figures
+\renewcommand*\listfigurename{LIST OF FIGURES}  %- capitalize list of figures
+\renewcommand*\listtablename{LIST OF TABLES} 
+
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+
+%-----------------------------------------
+% Abstract
+%-----------------------------------------
+\include{abstract}
+
+%-----------------------------------------
+% Chapters
+%-----------------------------------------
+
+\pagenumbering{arabic}
+\include{chapters/ch1_introduction}
+\include{chapters/ch2_lit_survey}
+\include{chapters/ch3_design_methodology}
+\include{chapters/ch4_lex_yacc}
+\include{chapters/ch5_testing_results}
+\include{chapters/ch6_conclusion}
+
+%-----------------------------------------
+% References/ Bibliography
+%-----------------------------------------
+
+\newpage
+\addcontentsline{toc}{chapter}{BIBLIOGRAPHY}
+\bibliographystyle{ieeetr}
+\bibliography{paper_refs} 
+
+
+\include{appendix}
+
+
+\end{document}

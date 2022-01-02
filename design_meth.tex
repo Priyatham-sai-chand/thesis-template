@@ -1,0 +1,81 @@
+\documentclass[xcolor=table]{beamer}
+%\usepackage[none]{hyphenat}
+\usepackage{multicol}
+\usepackage[table]{xcolor} 
+\usepackage[backend=biber]{biblatex}
+\addbibresource{lit_survey.bib}
+\usetheme[progressbar=frametitle]{metropolis}
+\setbeamertemplate{frame numbering}[fraction]
+\useoutertheme{metropolis}
+\useinnertheme{metropolis}
+\usefonttheme{metropolis}
+\usecolortheme{spruce}
+\setbeamercolor{background canvas}{bg=white}
+
+\definecolor{mygreen}{rgb}{.125,.5,.25}
+\usecolortheme[named=mygreen]{structure}
+
+\title{\fontsize{12.5pt}{20}\selectfont Decentralized Rental System using Blockchain}
+\subtitle{Project Stage-I (CS706PC) - Literature Survey}
+\author[my name]{B. Priyatham Sai Chand \\ \footnotesize 18261A0508  \\ Guided by: Dr. A. Nagesh }
+\date{}
+
+\setbeamercovered{transparent=5}
+
+\begin{document}
+\metroset{block=fill}
+
+\begin{frame}
+	\maketitle
+\end{frame}
+\begin{frame}{Literature Survey}
+
+	\fontsize{5.5pt}{8}\selectfont
+\begin{center}
+	\rowcolors{1,3,6}{mygreen!20}{white}
+	\begin{tabular}{ |p{1.2em}|p{2.4em}|p{4.0em}|p{10em}|p{8em}|p{8em}|p{8em}|} 
+\hline
+S.no & Publish Year & Author & Title & Application & Advantage & Disadvantages \\
+\hline
+1. & 2021 &Juri Mattila et al.&\textbf{Blockchain-based deployment of product-centric information systems} &  deployment carried out in products. &Discusses how this fits inside product life cycle and among product owners. & Doesn't cover private blockchain and channels inside it.\\ 
+\hline
+2. & 2020 &Qiheng Zhou et al.&\textbf{Solutions to scalability of blockchain: A survey} & Methods on scaling blockchain as per demand.  &  time factor in performing transactions and improvisation.  &Doesn't cover automation or load balancing techniques.\\ 
+\hline
+3. & 2019& Shaui Wang et al.&\textbf{Blockchain-enabled smart contracts: architecture, applications, and future trends}& In-depth analysis of smart contracts and various types  & Includes HyperLedger Fabric and the basic framework of how it goes& Doesn't specify  onboarding and authentication of users into network. \\ 
+\hline
+4. & 2019& Kazuhiro Yamashita et al.  & \textbf{Potential risks of hyperledger fabric smart contracts} & The pitfalls of using HyperLedger fabric & Covers programming difficulties and remedies for common risks. & Lacks on multi-language support and covers only golang.\\ 
+\hline
+5. & 2018 &Ioannis Karamitsos et al. & \textbf{Design of the blockchain smart contract: A use case for real estate}&structure for real estate use case & Describes architecture and layers needed for a full-pledged application. & Doesn't talk about using frameworks to simplify or alternative currencies. \\ 
+\hline
+
+\end{tabular}    
+\end{center}
+\end{frame}
+\begin{frame}{References}
+\bibliographystyle{ieeetran}
+\fontsize{10}\selectfont
+\nocite{*}
+	\begin{itemize}
+		\item \fullcite{mattila2021blockchain}  
+	 \item \fullcite{zhou2020solutions} 
+	 \item \fullcite{wang2019blockchain} 
+		\item \fullcite{yamashita2019potential}\\  
+	 \item \fullcite{karamitsos2018design} 
+
+	\end{itemize}
+
+\end{frame}
+\begin{frame}{Discussion} \vspace{5pt}
+
+
+
+	 \textbf{Honorable Mention:}\\
+\fontsize{8}\selectfont
+\fullcite{spielman2016blockchain}  
+
+	\Large \textbf{Thank You...}\\
+	\Large \textbf{Any Queries or Clarifications?}
+	
+
+\end{frame}
+\end{document}

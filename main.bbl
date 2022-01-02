@@ -1,0 +1,76 @@
+\begin{thebibliography}{10}
+
+\bibitem{castro2019rise}
+P.~Castro, V.~Ishakian, V.~Muthusamy, and A.~Slominski, ``The rise of
+  serverless computing,'' {\em Communications of the ACM}, vol.~62, no.~12,
+  pp.~44--54, 2019.
+
+\bibitem{awslambda}
+``Aws lambda.'' Amazon Web Services, documentation, November 22 2021 [Online].
+
+\bibitem{eismann2020serverless}
+S.~Eismann, J.~Scheuner, E.~Van~Eyk, M.~Schwinger, J.~Grohmann, N.~Herbst,
+  C.~L. Abad, and A.~Iosup, ``Serverless applications: Why, when, and how?,''
+  {\em IEEE Software}, vol.~38, no.~1, pp.~32--39, 2020.
+
+\bibitem{awsses}
+``Amazon ses.'' Amazon Web Services, documentation, November 22 2021 [Online].
+
+\bibitem{awssns}
+``Amazon simple notification service.'' Amazon Web Services, documentation,
+  November 22 2021 [Online].
+
+\bibitem{awssqs}
+``Amazon simple queue service.'' Amazon Web Services, documentation, November
+  22 2021 [Online].
+
+\bibitem{awsapi}
+``Amazon api gateway.'' Amazon Web Services, documentation, November 22 2021
+  [Online].
+
+\bibitem{awscloudwatch}
+``Amazon cloudwatch.'' Amazon Web Services, documentation, November 22 2021
+  [Online].
+
+\bibitem{awsxray}
+``Amazon x-ray.'' Amazon Web Services, documentation, November 22 2021
+  [Online].
+
+\bibitem{goodell2020serverless}
+G.~Goodell, ``Serverless electronic mail,'' {\em arXiv preprint
+  arXiv:2007.04608}, 2020.
+
+\bibitem{rfc5322}
+P.~Resnick, ``{Internet Message Format}.'' RFC 5322, Oct. 2008.
+
+\bibitem{dingledine2004tor}
+R.~Dingledine, N.~Mathewson, and P.~Syverson, ``Tor: The second-generation
+  onion router,'' tech. rep., Naval Research Lab Washington DC, 2004.
+
+\bibitem{rfc3501}
+M.~Crispin, ``{INTERNET MESSAGE ACCESS PROTOCOL - VERSION 4rev1}.'' RFC 3501,
+  Mar. 2003.
+
+\bibitem{lin2018tracking}
+W.-T. Lin, C.~Krintz, R.~Wolski, M.~Zhang, X.~Cai, T.~Li, and W.~Xu, ``Tracking
+  causal order in aws lambda applications,'' in {\em 2018 IEEE International
+  Conference on Cloud Engineering (IC2E)}, pp.~50--60, IEEE, 2018.
+
+\bibitem{mcgrath2017serverless}
+G.~McGrath and P.~R. Brenner, ``Serverless computing: Design, implementation,
+  and performance,'' in {\em 2017 IEEE 37th International Conference on
+  Distributed Computing Systems Workshops (ICDCSW)}, pp.~405--410, IEEE, 2017.
+
+\bibitem{eivy2017wary}
+A.~Eivy and J.~Weinman, ``Be wary of the economics of" serverless" cloud
+  computing,'' {\em IEEE Cloud Computing}, vol.~4, no.~2, pp.~6--12, 2017.
+
+\bibitem{rajan2018serverless}
+R.~A.~P. Rajan, ``Serverless architecture-a revolution in cloud computing,'' in
+  {\em 2018 Tenth International Conference on Advanced Computing (ICoAC)},
+  pp.~88--93, IEEE, 2018.
+
+\bibitem{rfc5598}
+D.~Crocker, ``{Internet Mail Architecture}.'' RFC 5598, July 2009.
+
+\end{thebibliography}

@@ -1,0 +1,69 @@
+This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: certificate.aux
+A level-1 auxiliary file: declaration.aux
+A level-1 auxiliary file: acknowledgement.aux
+A level-1 auxiliary file: abstract.aux
+A level-1 auxiliary file: chapters/ch1_introduction.aux
+A level-1 auxiliary file: chapters/ch2_lit_survey.aux
+A level-1 auxiliary file: chapters/ch3_design_methodology.aux
+A level-1 auxiliary file: chapters/ch4_lex_yacc.aux
+A level-1 auxiliary file: chapters/ch5_testing_results.aux
+A level-1 auxiliary file: chapters/ch6_conclusion.aux
+The style file: ieeetr.bst
+A level-1 auxiliary file: appendix.aux
+Database file #1: paper_refs.bib
+Warning--entry type for "awssns" isn't style-file defined
+--line 247 of file paper_refs.bib
+Warning--entry type for "awscloudwatch" isn't style-file defined
+--line 261 of file paper_refs.bib
+Warning--entry type for "awsapi" isn't style-file defined
+--line 275 of file paper_refs.bib
+Warning--entry type for "awsxray" isn't style-file defined
+--line 289 of file paper_refs.bib
+Warning--entry type for "awsses" isn't style-file defined
+--line 305 of file paper_refs.bib
+Warning--I didn't find a database entry for "sespricing"
+You've used 18 entries,
+            1876 wiz_defined-function locations,
+            574 strings with 5649 characters,
+and the built_in function-call counts, 3411 in all, are:
+= -- 322
+> -- 117
+< -- 0
++ -- 49
+- -- 31
+* -- 231
+:= -- 462
+add.period$ -- 18
+call.type$ -- 18
+change.case$ -- 19
+chr.to.int$ -- 0
+cite$ -- 18
+duplicate$ -- 157
+empty$ -- 394
+format.name$ -- 31
+if$ -- 850
+int.to.chr$ -- 0
+int.to.str$ -- 18
+missing$ -- 7
+newline$ -- 57
+num.names$ -- 11
+pop$ -- 94
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 112
+stack$ -- 0
+substring$ -- 147
+swap$ -- 43
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 29
+width$ -- 20
+write$ -- 155
+(There were 6 warnings)

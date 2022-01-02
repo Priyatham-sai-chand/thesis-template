@@ -1,0 +1,192 @@
+\chapter*{APPENDIX}
+\addcontentsline{toc}{chapter}{APPENDIX}
+
+\appendix
+\section*{email\_batcher}
+\begin{lstlisting}
+   var AWS = require('aws-sdk');
+AWS.config.update({region: 'ap-south-1'});
+var sqs = new AWS.SQS();
+var ses = new AWS.SES();
+var chunk_size = 50;
+exports.handler = async (event,context) => {
+// inputs from the request 
+    var emails = event['email']
+    var names = event['name']
+    console.log("received emails: ", emails)
+    
+    const params1 = {
+  Template: {
+    TemplateName: "template", 
+    HtmlPart: event['html'],
+    SubjectPart: event['subject'],
+    TextPart: event['html'],
+  },
+};
+
+try{
+var temp =  await ses.createTemplate(params1).promise();
+}
+catch(error){
+console.log("create template ", temp)
+
+    await ses.deleteTemplate({TemplateName: 'template' }).promise();
+    await ses.createTemplate(params1).promise();
+
+}
+
+    var emails_count = Object.keys(emails).length;
+    var names_count = Object.keys(names).length;
+    if(emails_count < names_count)
+        return { statusCode: 400, body: 'Error: names are more than emails' }; 
+    else{
+
+        var diff = emails_count-names_count;
+        for(var i = 0; i < diff; i++){
+            names.push('');
+        }
+    }
+// batching the emails
+    var final = [];
+    var counter = 0;
+    var portion = {
+        "current_batch": (counter + 1),
+        "emails": [],
+        "names": [],
+        "html": event.html,
+        "sender_email": event.senderemail,
+        "end_of_batches": false,
+    };
+
+     emails.forEach((email,index) => {
+         const name = names[index]
+         if (counter !== 0 && counter % chunk_size === 0) {
+        final.push(portion);
+     portion = {
+        "current_batch": (counter/2) + 1,
+        "emails": [],
+        "names": [],
+        "html": event.html,
+        "sender_email": event.senderemail,
+       "end_of_batches": false
+    };
+      }
+      portion['emails'].push(email)
+      portion['names'].push(name)
+      counter++;
+     })
+     portion['end_of_batches'] = true
+     final.push(portion);
+
+      // sending the batches onto the queue
+     var temp = {};
+    for (var batch in final){
+        var params = {
+            MessageGroupId: batch,
+      MessageBody: JSON.stringify(final[batch]),
+      MessageDeduplicationId: context.getRemainingTimeInMillis().toString(),
+      QueueUrl: "https://sqs.ap-south-1.amazonaws.com/285448632456/email_batch.fifo"
+    };
+       temp = await sqs.sendMessage(params).promise();
+
+    }
+    
+    return "email sending started";
+
+\end{lstlisting}
+
+\section*{bounce\_emailer}
+\begin{lstlisting}
+var AWS = require('aws-sdk');
+AWS.config.update({region: 'ap-south-1'});
+const docClient = new AWS.DynamoDB.DocumentClient();
+var sqs = new AWS.SQS();
+exports.handler = async (event) => {
+   var dest,type; 
+    event['Records'].forEach((value,index) =>{
+        var message = JSON.parse(value['Sns']['Message'])
+        console.log("message: ", message)
+        console.log("event type ", message['eventType'])
+        dest = message['mail']['destination']
+        type = message['bounce']['bounceType']
+        console.log("destinations: ", dest)
+        
+    })
+   
+   var datetime = new Date();
+   const params = {
+  TableName : 'emails',
+  /* Item properties will depend on your application concerns */
+  Item: {
+     email: JSON.stringify(dest),
+     date: datetime.toISOString(),
+     type: type
+  }
+}
+  // run SQL command
+   try {
+    var temp = await docClient.put(params).promise();
+    console.log("success ",temp);
+  } catch (err) {
+    return err;
+  }
+    return "function done";
+};
+
+\end{lstlisting}
+
+\section*{bounce\_db}
+\begin{lstlisting}
+var AWS = require('aws-sdk');
+AWS.config.update({region: 'ap-south-1'});
+const docClient = new AWS.DynamoDB.DocumentClient();
+
+exports.handler = async (event) => {
+
+// retrieve records from db
+    const getAllRecords = async (table) => {
+  let params = {
+    TableName: table,
+  };
+  let items = [];
+  let data = await docClient.scan(params).promise();
+  items = [...items, ...data.Items];
+  while (typeof data.LastEvaluatedKey != "undefined") {
+    params.ExclusiveStartKey = data.LastEvaluatedKey;
+    data = await docClient.scan(params).promise();
+    items = [...items, ...data.Items];
+  }
+  return items;
+};
+const deleteItem = async (table, id) => {
+  var params = {
+    TableName: table,
+    Key: {
+      email: id,
+    },
+  };
+  
+
+    let data = await docClient.delete(params).promise();
+    return data;
+};
+
+var allRecords,allDelete;
+// delete records from db
+try {
+    const tableName = "emails";
+    // scan and get all items
+     allRecords = await getAllRecords(tableName);
+    console.log("records db ", allRecords)
+    // delete one by one 
+    for (const item of allRecords) {
+      allDelete = await deleteItem(tableName, item.email);
+    }
+  } catch (e) {
+      console.log(e)
+  }
+  
+  return allRecords;
+};
+
+\end{lstlisting}
